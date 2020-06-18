@@ -29,7 +29,7 @@ bot.on('message', message => {
       if (!args[1]) return message.reply('the argument for messages to delete is missing. It should be a number.')
       message.delete()
       message.channel.bulkDelete(args[1]);
-      message.reply('I have successfully deleted ' + args[1] + ' message(s).')
+      message.reply(`I have successfully deleted ${args[1]} message(s).`)
       .then(msg => {
         msg.delete( {timeout: 3000})
       })
