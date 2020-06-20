@@ -15,5 +15,5 @@ This bot REQIURES the following:
 * `npm install Discord.js` command which installs Discord.js.
 ## Credits
 
-Idea by littleBitsman
-Created by littleBitsman
+* Idea by littleBitsman
+* Created by littleBitsman
