@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
-const token = `${ TOKEN }`;
+const token = `${process.env.token}`;
 const PREFIX = '/';
 const embed = new Discord.MessageEmbed()
 const ping = require('minecraft-server-util')
