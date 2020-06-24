@@ -20,10 +20,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with: ${{ secrets.TOKEN }}
     - name: Use Node.js ${{ matrix.node-version }}
-      env: ${{ secrets.TOKEN }}
       uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node-version }}
     - run: npm i
     - run: node index.js
