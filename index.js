@@ -117,4 +117,4 @@ bot.on('message', message => {
         message.reply('you do not have permission to use this command.')
       break;
 }})
-  bot.login(`${{ process.env.token}} `);
+  bot.login(`${{ process.env.token }} `);
