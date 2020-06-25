@@ -23,6 +23,6 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
     - run: npm i
+    - run: node index.js
       env: 
         token: ${{ secrets.TOKEN }}
-    - run: node index.js
