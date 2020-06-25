@@ -24,7 +24,7 @@ jobs:
       uses: actions/setup-node@v1
     - run: node -v
     - run: npm install -g n
-    - run: n 12.0.0
+    - run: sudo n 12.0.0
     - run: npm install discord.js
     - run: npm i
     - run: node index.js
