@@ -3,7 +3,6 @@ const bot = new Discord.Client()
 const PREFIX = '/';
 const embed = new Discord.MessageEmbed()
 const ping = require('minecraft-server-util')
-console.log(process.env.token.toString())
 bot.on('ready', async () => {
   console.log('This bot is online! Created by @littleBitsman.');
   let statuses = [
@@ -117,4 +116,4 @@ bot.on('message', message => {
         message.reply('you do not have permission to use this command.')
       break;
 }})
-  bot.login(process.env.token);
+  bot.login(process.env.token.toString);
