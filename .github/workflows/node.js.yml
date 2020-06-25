@@ -23,7 +23,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
     - run: node -v
-    - run: nvm update
+    - run: npm install -g n
     - run: npm install discord.js
     - run: npm i
     - run: node index.js
