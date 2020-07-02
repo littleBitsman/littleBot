@@ -17,6 +17,7 @@ bot.on('ready', async () => {
 })
 
 bot.on('message', message => {
+  if (message.channel.type === 'dm') {return}
   let args = message.content.substring(PREFIX.length).split(' ')
   if(message.content.startsWith(PREFIX))
   switch (args[0]) {
@@ -70,6 +71,7 @@ bot.on('message', message => {
         .addField('help', 'Show this message for help!')
         .addField('mcserverstats', 'Check an MC servers: IP, version, status, online players, and max players. Usage: /mcserverstats <server IP> <server port>')
         .addField('applystaff', 'Apply for a staff rank!')
+        .addField('ticket', 'Send a ticket in a DM to somebody. Reqiures permission: ADMINISTRATOR')
         .setAuthor('Written by @littleBitsman')
         message.author.send(embed)
         message.reply('help was sent in a DM.')
