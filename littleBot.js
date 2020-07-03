@@ -26,6 +26,7 @@ bot.on('message', message => {
       break;
 
     case 'clear':
+      if (message.member.hasPermission(['ADMINISTRATOR'])) return message.reply('You do not have permission to use this command. Required permssion: ADMINISTRATOR')
       if (!args[1]) return message.reply('the argument for messages to delete is missing. It should be a number.')
       message.delete()
       message.channel.bulkDelete(args[1]);
@@ -34,14 +35,6 @@ bot.on('message', message => {
         msg.delete( {timeout: 3000})
       })
       break;
-    case 'joinmcserver':
-      var embed = new Discord.MessageEmbed()
-        .setTitle('Join Minecraft Server:')
-        .setColor(0xff000)
-        .setDescription('This is the link to be whitelisted for the Minecraft server: https://forms.gle/XZhNGjANpEUbtqFP6.')
-        .setAuthor('Written by @littleBitsman')
-        message.channel.send(embed)
-        break;
     case 'inviteme':
       var embed = new Discord.MessageEmbed()
         .setTitle('Invite Me!:')
@@ -64,13 +57,11 @@ bot.on('message', message => {
         .setColor(0xff0000)
         .addField('Prefix:', PREFIX)
         .addField('testlittlebot', 'Check if I am online.')
-        .addField('clear', 'Clear a specific amount of messages. Usage: /clear <messages to be deleted>. The limit is 100.')
-        .addField('joinmcserver', 'Get the form to be whitelisted on the Minecraft server.')
+        .addField('clear', 'Clear a specific amount of messages. Usage: /clear <messages to be deleted>. The limit is 100. Reqiures permission: ADMINISTRATOR')
         .addField('inviteme', 'Invite me to your server! Please not that I am not always online.')
         .addField('youtube', 'Look at @littleBitsman\'s Youtube channel.')
         .addField('help', 'Show this message for help!')
-        .addField('mcserverstats', 'Check an MC servers: IP, version, status, online players, and max players. Usage: /mcserverstats <server IP> <server port>')
-        .addField('applystaff', 'Apply for a staff rank!')
+        .addField('ping', 'Check an MC servers: IP, version, status, online players, and max players. Usage: /ping <server IP> <server port>')
         .addField('ticket', 'Send a ticket in a DM to somebody. Reqiures permission: ADMINISTRATOR')
         .setAuthor('Written by @littleBitsman')
         message.author.send(embed)
@@ -89,14 +80,6 @@ bot.on('message', message => {
             .addField('Max Players: ', Response.maxPlayers)
             message.channel.send(embed)
         })
-      break;
-    case 'applystaff':
-      var embed = new Discord.MessageEmbed()
-        .setTitle('Apply for Staff:')
-        .setDescription('Apply for staff here: https://forms.gle/CXB3aYto1FW6d22K8')
-        .setAuthor('Written by @littleBitsman')
-        message.channel.send(embed)
-        break;
     case 'ticket':
       if (message.member.hasPermission(['ADMINISTRATOR'])) {
         mention = message.mentions.users.first()
