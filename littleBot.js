@@ -26,7 +26,7 @@ bot.on('message', message => {
       break;
 
     case 'clear':
-      if (message.member.hasPermission(['ADMINISTRATOR'])) return message.reply('You do not have permission to use this command. Required permssion: ADMINISTRATOR')
+      if (message.member.hasPermission('ADMINISTRATOR')) return message.reply('You do not have permission to use this command. Required permssion: ADMINISTRATOR')
       if (!args[1]) return message.reply('the argument for messages to delete is missing. It should be a number.')
       message.delete()
       message.channel.bulkDelete(args[1]);
