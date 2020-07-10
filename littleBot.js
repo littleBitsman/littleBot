@@ -71,7 +71,7 @@ bot.on('message', message => {
         if(!args[1]) return message.channel.send('You must type a Minecraft server IP')
         if(!args[2]) return message.channel.send('You must type a Minecraft server port')
         ping(args[1], parseInt(args[2]), (error, Response) =>{
-          if(error) message.reply('I had trouble finding that server.')
+          if(error) message.reply('I had trouble finding that Minecraft server.')
           var embed = new Discord.MessageEmbed()
             .setTitle('Server Status: ' + args[1] + ':' + args[2])
             .addField('Server IP: ', Response.host)
