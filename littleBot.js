@@ -61,7 +61,7 @@ bot.on('message', message => {
         .addField('inviteme', 'Invite me to your server! Please not that I am not always online.')
         .addField('youtube', 'Look at @littleBitsman\'s Youtube channel.')
         .addField('help', 'Show this message for help!')
-        .addField('ping', 'Check an MC servers: IP, version, status, online players, and max players. Usage: /ping <server IP> <server port>')
+        .addField('ping', 'Check a Minecraft server\'s: IP, version, status, online players, and max players. Usage: /ping <server IP> <server port>')
         .addField('ticket', 'Send a ticket in a DM to somebody. Reqiures permission: ADMINISTRATOR')
         .setAuthor('Written by @littleBitsman')
         message.author.send(embed)
