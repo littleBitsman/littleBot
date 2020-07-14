@@ -57,7 +57,7 @@ bot.on('message', message => {
         .setColor(0xff0000)
         .addField('Prefix:', PREFIX)
         .addField('testlittlebot', 'Check if I am online.')
-        .addField('clear', 'Clear a specific amount of messages. Usage: /clear <messages to be deleted>. The limit is 100. Reqiures permission: ADMINISTRATOR')
+        .addField('clear', 'Clear a specific amount of messages. Usage: /clear <messages to be deleted>. The limit is 100. Reqiures permission: MANAGE_MESSAGES')
         .addField('inviteme', 'Invite me to your server! Please not that I am not always online.')
         .addField('youtube', 'Look at @littleBitsman\'s Youtube channel.')
         .addField('help', 'Show this message for help!')
