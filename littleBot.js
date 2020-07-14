@@ -90,7 +90,7 @@ bot.on('message', message => {
         mentionID = mention.id
         var messagetosend = new Discord.MessageEmbed()
           .setTitle('Ticket')
-          .setDescription('Hey ' + mentioned + '! You recieved this because of: ' + reason + '.')
+          .setDescription(`Hey ${mentioned}! You recieved this because of: ${reason}.`)
         message.client.users.fetch(`${mentionID}`).then(user => user.send(messagetosend))
         message.delete()
         message.reply(`I successfully sent a ticket to ${mention}`)
