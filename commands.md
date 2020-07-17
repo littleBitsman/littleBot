@@ -1,3 +1,5 @@
 # Commands
 
-**WORK IN PROGRESS IM TOO LAZY TO DO IT RN**
+Prefix: /
+
+
