@@ -70,6 +70,7 @@ bot.on('message', message => {
     case 'ping':
         if(!args[1]) return message.channel.send('You must type a Minecraft server IP')
         if(!args[2]) return message.channel.send('You must type a Minecraft server port')
+        message.channel.send(`Attempting to ping ${args[1]} at port ${args[2]}.`)
         ping(args[1], parseInt(args[2]), (error, Response) =>{
           if(error) message.reply('I had trouble finding that Minecraft server.')
           var embed = new Discord.MessageEmbed()
