@@ -73,8 +73,9 @@ bot.on('message', message => {
         message.channel.send(`Attempting to ping ${args[1]} at port ${args[2]}.`)
         ping(args[1], parseInt(args[2]), (error, Response) =>{
           if(error) message.reply('I had trouble finding that Minecraft server.')
+          message.channel.send('Received stats, now showing...')
           var embed = new Discord.MessageEmbed()
-            .setTitle('Server Status: ' + args[1] + ':' + args[2])
+            .setTitle(`Server Stats of: ${args[1]} at port ${args[2]}`)
             .addField('Server IP: ', Response.host)
             .addField('Server Version: ', Response.version)
             .addField('Online Players: ', Response.onlinePlayers)
