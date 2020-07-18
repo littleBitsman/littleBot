@@ -103,5 +103,71 @@ bot.on('message', message => {
       else
         message.reply('you do not have permission to use this command.')
       break;
+    case 'kick':
+      if (!message.memeber.hasPermission(['KICK_MEMBERS']))
+        message.reply('you do not have permission to use this command. Requires permission KICK_MEMBERS.')
+      const user = message.mentions.users.first();
+      if (user) {
+        const member = message.guild.member(user);
+        args.splice(0,2)
+        var reason = args.join(' ')
+        if (member) {
+          member
+            .kick(reason)
+            .then(() => {
+              // We let the message author know we were able to kick the person
+              message.reply(`Successfully kicked ${user.tag}`);
+            })
+            .catch(err => {
+              message.reply('I was unable to kick the member');
+              console.error(err);
+            });
+        } else {
+          message.reply("That user isn't in this guild!");
+        }
+      } else {
+        message.reply("You didn't mention the user to kick!");
+        break;
+      }
+    }
+  });
+    case 'ban':
+      if (!message.memeber.hasPermission(['BAN_MEMBERS']))
+        message.reply('you do not have permission to use this command. Requires permission BAN_MEMBERS.')
+      const user = message.mentions.users.first();
+      // If we have a user mentioned
+      if (user) {
+        // Now we get the member from the user
+        const member = message.guild.member(user);
+        args.splice(0,2)
+        var banreason = args.join(' ')
+        // If the member is in the guild
+        if (member) {
+          member
+            .ban({
+              reason: banreason,
+          })
+            .then(() => {
+              // We let the message author know we were able to ban the person
+              message.reply(`Successfully banned ${user.tag}`);
+          })
+            .catch(err => {
+              // An error happened
+              // This is generally due to the bot not being able to ban the member,
+              // either due to missing permissions or role hierarchy
+              message.reply('I was unable to ban the member');
+              // Log the error
+              console.error(err);
+          });
+        } else {
+          // The mentioned user isn't in this guild
+          message.reply("That user isn't in this guild!");
+        }
+      } else {
+        // Otherwise, if no user was mentioned
+        message.reply("You didn't mention the user to ban!");
+      }
+    }
+});
 }})
   bot.login(process.env.token);
