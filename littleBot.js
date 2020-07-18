@@ -81,6 +81,7 @@ bot.on('message', message => {
             .addField('Max Players: ', Response.maxPlayers)
             message.channel.send(embed)
         })
+      break;
     case 'ticket':
       if (message.member.hasPermission(['ADMINISTRATOR'])) {
         mention = message.mentions.users.first()
