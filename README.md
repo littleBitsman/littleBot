@@ -17,6 +17,3 @@ This bot REQIURES the following:
 
 * Idea by littleBitsman
 * Created by littleBitsman
-
-### Want to install this bot/run it locally?
-Go [here](https://youtube.com) to install this bot locally
