@@ -3,6 +3,7 @@ const bot = new Discord.Client()
 const PREFIX = '/';
 const embed = new Discord.MessageEmbed()
 const ping = require('minecraft-server-util')
+const weather = require('weather-js')
 bot.on('ready', async () => {
   console.log('This bot is online! Created by @littleBitsman.');
   let statuses = [
@@ -103,5 +104,20 @@ bot.on('message', message => {
       else
         message.reply('you do not have permission to use this command.')
       break;
+    case 'weather':
+      weather.find({search: `city, ${args[args.length - 1]}`, degreeType: 'F'}, function(err, result) {
+              if(err) console.log(err);
+              var currentw = new Discord.MessageEmbed()
+                .setTitle(`Current Weather in ${args[1]} in state ${args[2]}`)
+                .addField('Temperature', result[0].current.temperature)
+                .addField('Sky Text', result[0].current.skytext)
+                .addField('Humidity', result[0].current.humidity)
+                .addField('Wind Speed & Direction', result[0].current.winddisplay)
+                .addField('Feels Like', result[0].current.feelslike)
+                .addField('Location', result[0].current.observationpoint)
+                .addField('Time', result[0].current.observationtime)
+                .addField('Date', result[0].current.date)
+              message.channel.send(currentw)
+            });
 }})
-  bot.login(process.env.token);
+  bot.login('NzA5ODIzMjQwMjY0MDg5NjEx.XrrgaA.WwFUeN3Mby_stGFNq-6WI_GxXBo');
