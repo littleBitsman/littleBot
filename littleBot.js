@@ -120,4 +120,4 @@ bot.on('message', message => {
               message.channel.send(currentw)
             });
 }})
-  bot.login('NzA5ODIzMjQwMjY0MDg5NjEx.XrrgaA.WwFUeN3Mby_stGFNq-6WI_GxXBo');
+  bot.login(TOKEN);
