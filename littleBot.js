@@ -61,7 +61,7 @@ bot.on('message', message => {
         .addField('youtube', 'Look at @littleBitsman\'s Youtube channel.')
         .addField('help', 'Show this message for help!')
         .addField('ping', 'Check a Minecraft server\'s: IP, version, status, online players, and max players. Usage: /ping <server IP> <server port>')
-        .addField('ticket', 'Send a ticket in a DM to somebody. Reqiures permission: ADMINISTRATOR')
+        .addField('ticket', 'Send a ticket in a DM to somebody. You require the permission: ADMINISTRATOR')
         .setAuthor('Written by @littleBitsman')
         message.author.send(embed)
         message.reply('help was sent in a DM.')
