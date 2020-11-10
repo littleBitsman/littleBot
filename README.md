@@ -24,4 +24,4 @@ This bot REQIURES the following:
 * Created by littleBitsman
 
 ## Support me
-Support me on [Patreon](patreon.com/littlebitsman)
+Support me on [Patreon](https://patreon.com/littlebitsman)
